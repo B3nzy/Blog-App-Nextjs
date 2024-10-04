@@ -11,13 +11,15 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <header>
-          <Navbar />
-        </header>
-        <div>{children}</div>
-        <footer>
-          <Footer />
-        </footer>
+        <div className="flex flex-col justify-between min-h-screen m-auto">
+          <header className="sticky top-0">
+            <Navbar />
+          </header>
+          <div>{children}</div>
+          <footer>
+            <Footer />
+          </footer>
+        </div>
       </body>
     </html>
   );
