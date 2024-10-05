@@ -55,7 +55,7 @@ export default function Links() {
               </Link>
             )}
             <button
-              className="border p-1 sm:p-2 bg-slate-200 text-slate-800 rounded-sm"
+              className="border ml-2 sm:ml-5 md:ml-8 p-2 bg-slate-200 text-slate-800 rounded-sm"
               href={"/logout"}
             >
               Logout
@@ -63,7 +63,7 @@ export default function Links() {
           </>
         ) : (
           <button
-            className="border p-2 bg-slate-300 text-slate-800 rounded-sm"
+            className="border ml-2 sm:ml-5 md:ml-8 p-2 bg-slate-300 text-slate-800 rounded-sm"
             href={"/login"}
           >
             Login
@@ -76,7 +76,7 @@ export default function Links() {
       </button>
       {isOpen && (
         <div
-          className={`sm:hidden absolute top-16 h-[calc(100vh-64px)] bg-slate-500 shadow-2xl z-10 w-[75vw] right-0 flex flex-col justify-center gap-2 items-center`}
+          className={`sm:hidden absolute top-16 h-[calc(100vh-64px)] bg-slate-500 shadow-2xl z-10 w-[75vw] right-0 flex flex-col justify-center gap-2 items-center overflow-hidden`}
         >
           {links.map((link) => {
             return (
