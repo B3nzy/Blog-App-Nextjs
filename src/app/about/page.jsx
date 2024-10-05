@@ -45,7 +45,7 @@ export default function AboutPage() {
         </div>
       </div>
       <div className="w-full flex justify-center items-center">
-        <Image className="" src={"/about.png"} height={600} width={600} />
+        <Image className="" src={"/about.png"} height={500} width={500} />
       </div>
     </div>
   );
