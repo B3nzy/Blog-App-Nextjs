@@ -23,7 +23,7 @@ export default function Home() {
         </div>
         <Image src="/brands.png" width={500} height={500} />
       </div>
-      <div className="w-full h-auto">
+      <div className="w-full flex justify-center items-center">
         <Image
           className="fill"
           src="/hero.gif"
