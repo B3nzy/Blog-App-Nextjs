@@ -22,7 +22,7 @@ export default function Links() {
   return (
     <>
       {/* For Large Screen */}
-      <div className="hidden sm:block flex-row gap-2 sm:gap-5 md:gap-8 items-center text-sm sm:text-base">
+      <div className="hidden z-50 sm:block flex-row gap-2 sm:gap-5 md:gap-8 items-center text-sm sm:text-base">
         {links.map((link) => {
           return (
             <Link
@@ -76,7 +76,7 @@ export default function Links() {
       </button>
       {isOpen && (
         <div
-          className={`sm:hidden absolute top-16 h-[calc(100vh-64px)] bg-slate-500 shadow-2xl z-10 w-[75vw] right-0 flex flex-col justify-center gap-2 items-center overflow-hidden`}
+          className={`sm:hidden absolute top-16 h-[calc(100vh-64px)] bg-slate-500 shadow-2xl z-50 w-[75vw] right-0 flex flex-col justify-center gap-2 items-center overflow-hidden`}
         >
           {links.map((link) => {
             return (

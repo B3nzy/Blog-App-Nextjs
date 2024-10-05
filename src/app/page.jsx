@@ -7,8 +7,8 @@ export default function Home() {
         <div className="text-6xl lg:text-8xl">Creative Thoughts Agency.</div>
         <p className="text-base lg:text-lg">
           Discover fresh perspectives, dive into insightful stories, and explore
-          a world of ideas. Whether you're here to find inspiration, learn
-          something new, or simply unwind with some great content, we're
+          a world of ideas. Whether you&apos;re here to find inspiration, learn
+          something new, or simply unwind with some great content, we&apos;re
           thrilled to have you join our community.
         </p>
         <div className="flex flex-row gap-5">

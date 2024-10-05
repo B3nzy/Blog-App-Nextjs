@@ -13,20 +13,20 @@ export default function AboutPage() {
           <p>
             At TensorBlog, we are passionate about exploring the ever-evolving
             world of technology, artificial intelligence, data science, and
-            beyond. Whether you’re a seasoned professional, an enthusiastic
+            beyond. Whether you&apos;re a seasoned professional, an enthusiastic
             learner, or simply curious about how cutting-edge tech is shaping
-            our world, you’ll find something here for you.
+            our world, you&apos;ll find something here for you.
           </p>
           <p>
             We aim to break down complex concepts into engaging, digestible
             content—balancing depth with clarity. Our mission is to empower
-            readers with knowledge that’s both insightful and actionable,
+            readers with knowledge that&apos;s both insightful and actionable,
             helping you stay ahead of the curve in the fast-paced digital age.
           </p>
           <p>
             Join us on this journey of discovery, innovation, and tech
-            exploration. Let's dive deep into the world of AI, data, and tech
-            trends—one blog post at a time.
+            exploration. Let&apos;s dive deep into the world of AI, data, and
+            tech trends—one blog post at a time.
           </p>
         </div>
         <div className="flex flex-row gap-10">
