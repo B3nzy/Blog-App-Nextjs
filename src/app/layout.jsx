@@ -12,7 +12,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         <div className="flex flex-col justify-between min-h-screen m-auto">
-          <header className="sticky top-0">
+          <header className="sticky top-0 z-[60]">
             <Navbar />
           </header>
           <div>{children}</div>

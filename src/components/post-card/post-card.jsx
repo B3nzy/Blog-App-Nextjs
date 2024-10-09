@@ -1,77 +1,50 @@
 "use client";
-import Image from "next/image";
-import React, { useState } from "react";
+import { motion } from "framer-motion";
 
-export default function PostCard() {
-  const [hovered, setHovered] = useState(false);
-  const imageUrl =
-    "https://images.pexels.com/photos/1955134/pexels-photo-1955134.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2";
-
-  const blogTitle = "10 inspiring photos";
-  const blogDescription =
-    "A serene image of the sunrise breaking over a misty mountain range. The vibrant colors of the sky remind us that every day is a fresh start, filled with opportunities to innovate and push the boundaries of what's possible.";
+export default function PostCard({ blog }) {
+  const blogMainDivVariant = { initial: {}, animate: { scale: 1.025 } };
+  const blogMainDivShadowVariant = {
+    initial: { opacity: 0 },
+    animate: { opacity: 0.5 },
+  };
+  const blogTitleVariant = { initial: { y: "7vh" }, animate: { y: "1vh" } };
+  const blogTitleUnderlineVariant = {
+    initial: { y: "7vh" },
+    animate: { y: "0vh", width: "250px" },
+  };
+  const blogDescriptionVariant = {
+    initial: { y: "2vh", opacity: 0 },
+    animate: { y: "0vh", opacity: 1 },
+  };
   return (
-    <div
-      className={`${
-        hovered ? "sm:scale-105" : ""
-      } w-[450px] h-[450px] transition-all duration-500 bg-auto bg-no-repeat bg-center flex flex-col gap-4 justify-center items-center`}
-      style={{ backgroundImage: `url(${imageUrl})` }}
-      onMouseOver={() => {
-        setHovered(true);
-      }}
-      onMouseOut={() => {
-        setHovered(false);
-      }}
+    <motion.div
+      className="w-[400px] h-[400px] bg-cover bg-no-repeat bg-center flex flex-col hover:cursor-pointer hover:shadow-lg justify-center items-center"
+      style={{ backgroundImage: `url(${blog.imageUrl})` }}
+      initial="initial"
+      animate="initial"
+      whileHover="animate"
+      variants={blogMainDivVariant}
     >
-      {/* background will be a bit blackish on hover effect */}
-      <div
-        className={`
-      ${
-        hovered ? "sm:opacity-50 opacity-0" : "opacity-0"
-      } transition-all duration-300
-      absolute w-[450px] h-[450px] bg-black `}
-      ></div>
-      {/* <h1
-        className={`${
-          hovered ? "-translate-y-2" : "translate-y-20"
-        } transition-all duration-500 text-slate-200 text-2xl font-semibold`}
+      <motion.div
+        className="absolute w-[400px] h-[400px] bg-black"
+        variants={blogMainDivShadowVariant}
+      ></motion.div>
+      <motion.h1
+        className="text-white text-2xl font-mono p-5"
+        variants={blogTitleVariant}
       >
-        {blogTitle}
-      </h1>
-      <div
-        className={`${
-          hovered ? "w-56 -translate-y-2" : "w-10 translate-y-20"
-        } rounded-lg bg-yellow-700 h-[2px] transition-all duration-500`}
-      ></div>
-      <h1
-        className={`${
-          hovered ? "opacity-100 -translate-y-2" : "opacity-0 translate-y-20"
-        } transition-all duration-500 text-center p-5`}
+        {blog.blogTitle}
+      </motion.h1>
+      <motion.div
+        className="bg-orange-700 w-10 h-[3px] rounded"
+        variants={blogTitleUnderlineVariant}
+      />
+      <motion.div
+        className="text-white p-5 text-sm"
+        variants={blogDescriptionVariant}
       >
-        {blogDescription}
-      </h1> */}
-
-      <h1
-        className={`${
-          hovered ? "sm:-translate-y-2" : "sm:translate-y-20"
-        } transition-all duration-500  text-slate-200 text-2xl font-semibold`}
-      >
-        {blogTitle}
-      </h1>
-      <div
-        className={`${
-          hovered ? "w-56 sm:-translate-y-2" : "w-10 sm:translate-y-20"
-        } rounded-lg bg-yellow-700 h-[2px] transition-all duration-500`}
-      ></div>
-      <h1
-        className={`${
-          hovered
-            ? "sm:opacity-100 sm:-translate-y-2"
-            : "sm:opacity-0 sm:translate-y-20"
-        } transition-all duration-500 text-center p-5`}
-      >
-        {blogDescription}
-      </h1>
-    </div>
+        {blog.blogDescription}
+      </motion.div>
+    </motion.div>
   );
 }

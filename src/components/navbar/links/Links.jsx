@@ -76,7 +76,7 @@ export default function Links() {
       </button>
       {isOpen && (
         <div
-          className={`sm:hidden absolute top-16 h-[calc(100vh-64px)] bg-slate-500 shadow-2xl z-50 w-[75vw] right-0 flex flex-col justify-center gap-2 items-center overflow-hidden`}
+          className={`sm:hidden z-[60] absolute top-16 h-[calc(100vh-64px)] bg-slate-500 shadow-2xl w-[75vw] right-0 flex flex-col justify-center gap-2 items-center overflow-hidden`}
         >
           {links.map((link) => {
             return (
