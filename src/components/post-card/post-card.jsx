@@ -1,7 +1,9 @@
 "use client";
 import { motion } from "framer-motion";
+import { useRouter } from "next/navigation";
 
 export default function PostCard({ blog }) {
+  const router = useRouter();
   const blogMainDivVariant = { initial: {}, animate: { scale: 1.025 } };
   const blogMainDivShadowVariant = {
     initial: { opacity: 0 },
@@ -16,6 +18,11 @@ export default function PostCard({ blog }) {
     initial: { y: "2vh", opacity: 0 },
     animate: { y: "0vh", opacity: 1 },
   };
+
+  const handleClick = (id) => {
+    router.push(`/blog/${id}`);
+  };
+
   return (
     <motion.div
       className="w-[400px] h-[400px] bg-cover bg-no-repeat bg-center flex flex-col hover:cursor-pointer hover:shadow-lg justify-center items-center"
@@ -24,6 +31,7 @@ export default function PostCard({ blog }) {
       animate="initial"
       whileHover="animate"
       variants={blogMainDivVariant}
+      onClick={() => handleClick(blog.id)}
     >
       <motion.div
         className="absolute w-[400px] h-[400px] bg-black"
