@@ -18,7 +18,7 @@ export default function SinglePostPage({ params }) {
   };
 
   return (
-    <div className="w-[900px] m-auto h-screen flex flex-col gap-10 mt-10">
+    <div className="w-[300px] md:w-[500px] lg:w-[700px] xl:w-[900px] m-auto h-screen flex flex-col gap-10 mt-10">
       <motion.div
         className="w-full h-96 bg-cover bg-no-repeat bg-center shadow-xl flex flex-col justify-end gap-2"
         style={{ backgroundImage: `url(${blog.imageUrl})` }}
@@ -28,7 +28,7 @@ export default function SinglePostPage({ params }) {
       >
         {/* Shadow on hover */}
         <motion.div
-          className="absolute w-[900px] h-96 bg-black"
+          className="absolute w-[300px] md:w-[500px] lg:w-[700px] xl:w-[900px] h-96 bg-black"
           variants={blogMainDivShadowVariant}
         ></motion.div>
         {/* Blog Type */}
